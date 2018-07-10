@@ -1,23 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Survey Form fCC</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
+
 <body>
- <style>
- @import url('https://fonts.googleapis.com/css?family=Poppins');
-header {
-    font-family: 'Poppins', sans-serif;
-    text-align:center;
-}
- </style>
- <header>
-    <h1 id="title">Survey Form</h1>
- </header>
- 
- <p id="description">Let us know how we can improve freeCodeCamp</p>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Poppins');
+
+        body {
+            background: linear-gradient(90deg, red, yellow, rgb (204, 204, 255));
+            font-family: 'Poppins', sans-serif;
+        }
+
+        header {
+            text-align: center;
+        }
+    </style>
+    <header>
+        <h1 id="title">Survey Form</h1>
+    </header>
+    <section>
+        <p id="description">Let us know how we can improve freeCodeCamp</p>
+        <form id="survey-form">
+            <label for="Name" id="name">*Name</label>
+            <input type="text" name="Name" placeholder="Enter your name" required>
+            <label for="Email" id="email">*Email</label>
+            <input type="email" name="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" placeholder="Enter your email address"
+                required>
+        </form>
+
+
+
+    </section>
 </body>
+
 </html>
