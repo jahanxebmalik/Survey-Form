@@ -36,7 +36,42 @@
             <label for="Age" id="number-label">*Age</label>
             <input type="number" id="number" name="Age" placeholder="Enter your age" required min="1" max="120">
 
-            <label for="dropdown" 
+            <label for="dropdown" id="role-label">Which option best describes your current role?</label>
+            <select id="dropdown">
+                <option value="">Select an option</option>
+                <option value="Student">Student</option>
+                <option value="Full-time-job">Full time job</option>
+                <option value="Full-time-learner"> Full time learner</option>
+                <option value="Prefer-not-to-say">Prefer not to say</option>
+                <option value="other">Other</option>
+            </select>
+
+            <legend for="radio" id="radio-buttons">How likely is that you would recommend freeCodeCamp to a friend?</legend>
+            <input type="radio" id="radio" name="Definitely">
+                <label>Definitely</label>
+            <input type="radio" id="radio" name="May-be">
+                <label>May be</label>
+            <input type="radio" id="radio" name="Not sure">
+                <label>Not sure</label>
+
+            <label for="dropdown2" id="Preference">What do you like most in FCC:</label>
+            <select id="dropdown2">
+                <option value="">Select an option</option>
+                <option value="Projects">Projects</option>
+                <option value="Challenges">Challenges</option>
+                <option value="Community">Community</option>
+                <option value="Open-source">Open source</option>
+            </select>
+
+            <label for="checkbox" id="improvements-label">Things that should be improved in the future (Check all that apply):</label>
+                <input type="checkbox" id="checkbox" value="Front-end Projects">
+                    <label>Front-end Projects</label>
+                <input type="checkbox" id="checkbox" value="Back-end Projects">
+                    <label>Back-end Projects</label>
+                <input type="checkbox" id="checkbox" value="Data-Visualization">
+                    <label>Data Visualization</label>
+                <input type="checkbox" id="checkbox" value="Videos">
+                    <label>Videos</label>   
         </form>
 
     </section>
