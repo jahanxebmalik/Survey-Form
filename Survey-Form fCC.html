@@ -13,28 +13,154 @@
         @import url('https://fonts.googleapis.com/css?family=Poppins');
 
         body {
-            background: linear-gradient(90deg, red, yellow, rgb (204, 204, 255));
+            background-color: deepskyblue;
             font-family: 'Poppins', sans-serif;
         }
 
         header {
             text-align: center;
         }
+
+        section {
+            background-color: rgb(255, 251, 251);
+            margin: 0 auto;
+            width: 80%;
+            min-height: 300px;
+            border-style: solid;
+            padding: 15px 25px 15px 25px;
+            border-radius: 10px;
+        }
+        
+        #description {
+            text-align: center;
+            padding-bottom: 1.5em;
+        }
+
+        #survey-form {
+            display: grid;
+            grid-template-columns: [labels] minmax(100px, 400px) [controls] auto;
+            grid-auto-flow: row;
+            grid-gap: 1em;
+            justify-items: start;
+        }
+
+        #name-label,
+        #email-label,
+        #number-label {
+            align-self: center;
+        }
+
+        #survey-form>label {
+            grid-column: labels;
+            grid-row: auto;
+            text-align: right;
+            justify-self: end;
+        }
+
+        #survey-form>input,
+        #survey-form>select,
+        #survey-form>div. 
+        #survey-form textarea {
+            grid-column: controls;
+            grid-row: auto;
+        }
+
+        #radio {
+            display: grid;
+            grid-row-gap: 0.5em;
+        }
+
+        #checkbox {
+            display: grid;
+            grid-row-gap: 0.5em;
+        }
+
+        .input-field {
+            width: 300px;
+            padding: 7px;
+            border: 1px solid #c0c0c0;
+            border-radius: 2px;
+            font-size: 0.8em;
+        }
+
+        .dropdown {
+            height: 35px;
+            width: 140px;
+            padding: 5px;
+            border: 1px solid #c0c0c0;
+            border-radius: 2px;
+        }
+
+        #text-area {
+            width: 280px;
+            padding: 5px 5px 0 5px;
+        }
+
+        #submit {
+            background-color: #59ace0;
+            border-radius: 4px;
+            color: #fff;
+            font-size: 1em;
+            height: 40px;
+            width: 96px;
+            margin: 5px 10px;
+            border: 0px solid;
+            grid-column: span 2;
+            justify-self: center;
+        }
+
+        @media all and (max-width: 985px) {
+            .input-field {
+                width: 80%;
+            }
+
+            #text-area {
+                width: 80%;
+            }
+        }
+
+        @media all and (max-width: 543px) {
+            #survey-form {
+                display: grid;
+                grid-template-columns: [content] 1fr;
+                justify-content: start;
+            }
+
+            #description {
+                text-align: center;
+            }
+
+            #survey-form>label {
+                width: 100%;
+                grid-column: content;
+                text-align: left;
+                justify-self: start;
+            }
+
+            #survey-form>input,
+            #survey-form>select,
+            #survey-form>div,
+            #survey-form>textarea {
+                width: 100%;
+                grid-column: content;
+            }
+        }
     </style>
     <header>
         <h1 id="title">Survey Form</h1>
     </header>
-    <section>
+        <section>
         <p id="description">Let us know how we can improve freeCodeCamp</p>
         <form id="survey-form">
             <label for="Name" id="name-label">*Name</label>
-            <input type="text" id="name"name="Name" placeholder="Enter your name" required>
+            <input type="text" id="name" name="Name" class="input-field" placeholder="Enter your name" required>
 
             <label for="Email" id="email-label">*Email</label>
-            <input type="email" id="email" name="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" placeholder="Enter your email address" required>
-            
+            <input type="email" id="email" name="Email" class="input-field" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" placeholder="Enter your email address"
+                required>
+
             <label for="Age" id="number-label">*Age</label>
-            <input type="number" id="number" name="Age" placeholder="Enter your age" required min="1" max="120">
+            <input type="number" id="number" name="Age" class="input-field" placeholder="Enter your age" required min="1" max="120">
 
             <label for="dropdown" id="role-label">Which option best describes your current role?</label>
             <select id="dropdown">
@@ -45,15 +171,14 @@
                 <option value="Prefer-not-to-say">Prefer not to say</option>
                 <option value="other">Other</option>
             </select>
-
-            <legend for="radio" id="radio-buttons">How likely is that you would recommend freeCodeCamp to a friend?</legend>
-            <input type="radio" id="radio" name="Definitely">
-                <label>Definitely</label>
-            <input type="radio" id="radio" name="May-be">
-                <label>May be</label>
-            <input type="radio" id="radio" name="Not sure">
-                <label>Not sure</label>
-
+            
+            <label for="radio" id="radio-buttons">How likely is that you would recommend freeCodeCamp to a friend?</label>
+            <div>
+                <label><input type="radio" id="radio" name="Definitely" value="1">Definitely</label>
+            <label><input type="radio" id="radio" name="May-be" value="2">May be</label>
+            <label><input type="radio" id="radio" name="Not sure" value="3">Not sure</label>
+             </div>
+             
             <label for="dropdown2" id="Preference">What do you like most in FCC:</label>
             <select id="dropdown2">
                 <option value="">Select an option</option>
@@ -64,17 +189,17 @@
             </select>
 
             <label for="checkbox" id="improvements-label">Things that should be improved in the future (Check all that apply):</label>
-                <input type="checkbox" id="checkbox" value="Front-end Projects">
-                    <label>Front-end Projects</label>
-                <input type="checkbox" id="checkbox" value="Back-end Projects">
-                    <label>Back-end Projects</label>
-                <input type="checkbox" id="checkbox" value="Data-Visualization">
-                    <label>Data Visualization</label>
-                <input type="checkbox" id="checkbox" value="Videos">
-                    <label>Videos</label>
-                    
-            <label for="textarea" id="comments">Any suggestions or comments:</label>
-                <textarea id="textarea" maxlength="300" placeholder="Write your comments here..." row="3" cols="35"></textarea>
+            <input type="checkbox" id="checkbox" value="Front-end Projects">
+            <label>Front-end Projects</label>
+            <input type="checkbox" id="checkbox" value="Back-end Projects">
+            <label>Back-end Projects</label>
+            <input type="checkbox" id="checkbox" value="Data-Visualization">
+            <label>Data Visualization</label>
+            <input type="checkbox" id="checkbox" value="Videos">
+            <label>Videos</label>
+
+            <label for="text-area" id="comments">Any suggestions or comments:</label>
+            <textarea id="text-area" maxlength="300" placeholder="Write your comments here..." row="3" cols="35"></textarea>
 
             <input type="submit" id="submit">
         </form>
