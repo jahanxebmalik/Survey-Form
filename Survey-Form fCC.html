@@ -27,14 +27,17 @@
     <section>
         <p id="description">Let us know how we can improve freeCodeCamp</p>
         <form id="survey-form">
-            <label for="Name" id="name">*Name</label>
-            <input type="text" name="Name" placeholder="Enter your name" required>
-            <label for="Email" id="email">*Email</label>
-            <input type="email" name="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" placeholder="Enter your email address"
-                required>
+            <label for="Name" id="name-label">*Name</label>
+            <input type="text" id="name"name="Name" placeholder="Enter your name" required>
+
+            <label for="Email" id="email-label">*Email</label>
+            <input type="email" id="email" name="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" placeholder="Enter your email address" required>
+            
+            <label for="Age" id="number-label">*Age</label>
+            <input type="number" id="number" name="Age" placeholder="Enter your age" required min="1" max="120">
+
+            <label for="dropdown" 
         </form>
-
-
 
     </section>
 </body>
