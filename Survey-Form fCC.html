@@ -33,14 +33,14 @@
                 grid-template-rows: auto;
                 justify-items: center;
                 align-items: center;
-    
-            .form {
+            }
+                
+            .container {
                 display: grid;
                 grid-template-columns: 1fr 1fr;
-                grid-column-gap: 2em;
                 grid-auto-rows: minmax (100px, auto);
             }
-                 
+
             #submit {
                 background-color: #59ace0;
                 border-radius: 4px;
@@ -63,8 +63,8 @@
     </header>
         <section>
         <p id="description">Let us know how we can improve freeCodeCamp</p>
-            </div>  
-        <form class="form" id="survey-form">
+        <div class="container" >
+            <form id="survey-form">
             <label for="Name" id="name-label">*Name</label>
             <input type="text" id="name" name="Name" class="input-field" placeholder="Enter your name" required>
 
@@ -116,7 +116,8 @@
 
             <input type="submit" id="submit">
         </form>
-
+        </div>
+        
     </section>
 </body>
 
