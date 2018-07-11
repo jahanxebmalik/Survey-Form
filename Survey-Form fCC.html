@@ -4,154 +4,67 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Survey Form fCC</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Survey Form fCC</title>    
+    <style>
+            @import url('https://fonts.googleapis.com/css?family=Poppins');
+    
+            body {
+                background-color: deepskyblue;
+                font-family: 'Poppins', sans-serif;
+            }
+    
+            header {
+                text-align: center;
+            }
+    
+            section {
+                background-color: rgb(255, 251, 251);
+                margin: 0  auto;
+                width: 80%;
+                min-height: 300px;
+                border-style: solid;
+                padding: 15px 25px 15px 25px;
+                border-radius: 10px;
+            }
+            
+            #description {
+                display: grid;
+                grid-template-rows: auto;
+                justify-items: center;
+                align-items: center;
+    
+            .form {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-column-gap: 2em;
+                grid-auto-rows: minmax (100px, auto);
+            }
+                 
+            #submit {
+                background-color: #59ace0;
+                border-radius: 4px;
+                color: #fff;
+                font-size: 1em;
+                height: 40px;
+                width: 96px;
+                margin: 5px 10px;
+                border: 0px solid;
+                grid-column: span 2;
+                justify-self: center;
+            }
+        </style>
 </head>
 
 <body>
-    <style>
-        @import url('https://fonts.googleapis.com/css?family=Poppins');
 
-        body {
-            background-color: deepskyblue;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        header {
-            text-align: center;
-        }
-
-        section {
-            background-color: rgb(255, 251, 251);
-            margin: 0 auto;
-            width: 80%;
-            min-height: 300px;
-            border-style: solid;
-            padding: 15px 25px 15px 25px;
-            border-radius: 10px;
-        }
-        
-        #description {
-            text-align: center;
-            padding-bottom: 1.5em;
-        }
-
-        #survey-form {
-            display: grid;
-            grid-template-columns: [labels] minmax(100px, 400px) [controls] auto;
-            grid-auto-flow: row;
-            grid-gap: 1em;
-            justify-items: start;
-        }
-
-        #name-label,
-        #email-label,
-        #number-label {
-            align-self: center;
-        }
-
-        #survey-form>label {
-            grid-column: labels;
-            grid-row: auto;
-            text-align: right;
-            justify-self: end;
-        }
-
-        #survey-form>input,
-        #survey-form>select,
-        #survey-form>div. 
-        #survey-form textarea {
-            grid-column: controls;
-            grid-row: auto;
-        }
-
-        #radio {
-            display: grid;
-            grid-row-gap: 0.5em;
-        }
-
-        #checkbox {
-            display: grid;
-            grid-row-gap: 0.5em;
-        }
-
-        .input-field {
-            width: 300px;
-            padding: 7px;
-            border: 1px solid #c0c0c0;
-            border-radius: 2px;
-            font-size: 0.8em;
-        }
-
-        .dropdown {
-            height: 35px;
-            width: 140px;
-            padding: 5px;
-            border: 1px solid #c0c0c0;
-            border-radius: 2px;
-        }
-
-        #text-area {
-            width: 280px;
-            padding: 5px 5px 0 5px;
-        }
-
-        #submit {
-            background-color: #59ace0;
-            border-radius: 4px;
-            color: #fff;
-            font-size: 1em;
-            height: 40px;
-            width: 96px;
-            margin: 5px 10px;
-            border: 0px solid;
-            grid-column: span 2;
-            justify-self: center;
-        }
-
-        @media all and (max-width: 985px) {
-            .input-field {
-                width: 80%;
-            }
-
-            #text-area {
-                width: 80%;
-            }
-        }
-
-        @media all and (max-width: 543px) {
-            #survey-form {
-                display: grid;
-                grid-template-columns: [content] 1fr;
-                justify-content: start;
-            }
-
-            #description {
-                text-align: center;
-            }
-
-            #survey-form>label {
-                width: 100%;
-                grid-column: content;
-                text-align: left;
-                justify-self: start;
-            }
-
-            #survey-form>input,
-            #survey-form>select,
-            #survey-form>div,
-            #survey-form>textarea {
-                width: 100%;
-                grid-column: content;
-            }
-        }
-    </style>
     <header>
         <h1 id="title">Survey Form</h1>
     </header>
         <section>
         <p id="description">Let us know how we can improve freeCodeCamp</p>
-        <form id="survey-form">
+            </div>  
+        <form class="form" id="survey-form">
             <label for="Name" id="name-label">*Name</label>
             <input type="text" id="name" name="Name" class="input-field" placeholder="Enter your name" required>
 
@@ -174,11 +87,11 @@
             
             <label for="radio" id="radio-buttons">How likely is that you would recommend freeCodeCamp to a friend?</label>
             <div>
-                <label><input type="radio" id="radio" name="Definitely" value="1">Definitely</label>
+                <input type="radio" id="radio" name="Definitely" value="1">Definitely
             <label><input type="radio" id="radio" name="May-be" value="2">May be</label>
             <label><input type="radio" id="radio" name="Not sure" value="3">Not sure</label>
              </div>
-             
+
             <label for="dropdown2" id="Preference">What do you like most in FCC:</label>
             <select id="dropdown2">
                 <option value="">Select an option</option>
