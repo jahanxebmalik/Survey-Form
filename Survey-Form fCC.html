@@ -24,8 +24,10 @@
             margin: 0 auto;
             width: 80%;
             min-height: 300px;
+            max-width: 900px;
             border-style: solid;
-            padding: 15px 25px 15px 25px;
+            padding: 10px;
+            padding-top: 20px;
             border-radius: 10px;
         }
 
@@ -55,13 +57,16 @@
         .radiobox,
         input [type="checkbox"] {
             float: left;
-            margin-right: 5px;
+            margin-right: 10px;
+            margin-top: 5.5px;
+            margin-left: -28px;
         }
 
         button {
             border-radius: 5px;
-            height: 45px;
-            width: 90px;
+            border: solid #0F5897;
+            height: 36px;
+            width: 85px;
             font-size: 1em;
             color: white;
             background-color: #0F5897;
@@ -74,10 +79,12 @@
             animation-name: background-color;
             animation-duration: 500ms;
             animation-fill-mode: forwards;
+            transform: scale(1.1);
         }
         @keyframes background-color {
             100% {
                 background-color: #4791D0;
+                border: solid #4791D0;
             }
         }
         
@@ -100,13 +107,44 @@
             border-radius: 2px;
         }
 
-        .radio,
-        .checkbox {
-            position: relative;
-            left: -20;
-            margin: 10px;
-            display: block;
-            padding-bottom: 10;
+        
+
+        @media screen and (max-width: 833px) {
+            .input-field {
+                width: 80%;
+            }
+            select {
+                width: 90%;
+            }
+            .dropdown {
+                width: 60%
+            }
+        }
+
+        @media screen and (max-width: 520px) {
+            .labels {
+                width: 100%;
+                text-align: left;
+            }
+            .rightTab {
+                width: 80%;
+                float: left;
+            }
+            .input-field {
+                width: 100%;
+            }
+            select {
+                width: 100%;
+            }
+            .dropdown {
+                width: 60%
+            }
+        }
+
+        @media screen and (min-width: 320px) {
+            .dropdown {
+                width: 70%;
+            }
         }
     </style>
 </head>
@@ -115,143 +153,142 @@
 
     <header>
         <h1 id="title">Survey Form</h1>
-    </header>
-    <section>
-
-        <p id="description">Let us know how we can improve freeCodeCamp</p>
-
+      </header>
+      <section>
+      
+        <p id="description">Why do you want to become a web developer?</p>
+      
         <form id="survey-form">
-            <div class="rowTab">
-                <div class="labels">
-                    <label for="Name" id="name-label">*Name</label>
-                </div>
-                <div class="rightTab">
-                    <input type="text" id="name" name="Name" class="input-field" placeholder="Enter your name" required>
-                </div>
+          <div class="rowTab">
+            <div class="labels">
+              <label for="Name" id="name-label">*Name</label>
             </div>
-
-            <div class="rowTab">
-                <div class="labels">
-                    <label for="Email" id="email-label">*Email</label>
-                </div>
-                <div class="rightTab">
-                    <input type="email" id="email" name="Email" class="input-field" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" placeholder="Enter your email address"
-                        required>
-                </div>
+            <div class="rightTab">
+              <input type="text" id="name" name="Name" class="input-field" placeholder="Enter your name" required>
             </div>
-
-            <div class="rowTab">
-                <div class="labels">
-                    <label for="Age" id="number-label">*Age</label>
-                </div>
-                <div class="rightTab">
-                    <input type="number" id="number" name="Age" class="input-field" placeholder="Enter your age" required min="1" max="120">
-                </div>
+          </div>
+      
+          <div class="rowTab">
+            <div class="labels">
+              <label for="Email" id="email-label">*Email</label>
             </div>
-
-            <div class="rowTab">
-                <div class="labels"> 
-                    <label for="role">Which option best describes your current role?</label>
-                </div>
-
-                <div class="rightTab">
-                    <select id="dropdown" class="dropdown" name="role">
-                        <option value="">Select an option</option>
-                        <option value="Student">Student</option>
-                        <option value="Full-time-job">Full time job</option>
-                        <option value="Full-time-learner"> Full time learner</option>
-                        <option value="Prefer-not-to-say">Prefer not to say</option>
-                        <option value="other">Other</option>
-                    </select>
-                </div>
+            <div class="rightTab">
+              <input type="email" id="email" name="Email" class="input-field" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" placeholder="Enter your email address" required>
             </div>
-
-            <div class="rowTab">
-                <div class="labels">
-                    <label for="radiobox" id="radio-buttons">How likely is that you would recommend freeCodeCamp to a friend?</label>
-                </div>
-                <div class="rightTab">
-                    <ul style="list-style: none;">
-                        <li class="radio">
-                            <label>Definitely
-                                <input name="radio-buttons" type="radio" value="1" class="radiobox">
-                            </label>
-                        </li>
-                        <li class="radio">
-                            <label>May be
-                                <input name="radio-buttons" type="radio" value="2" class="radiobox">
-                            </label>
-                        </li>
-                        <li class="radio">
-                            <label>Not sure
-                                <input name="radio-buttons" type="radio" value="3" class="radiobox">
-                            </label>
-                        </li>
-                    </ul>
-                </div>
+          </div>
+      
+          <div class="rowTab">
+            <div class="labels">
+              <label for="Age" id="number-label">*Age</label>
             </div>
-
-            <div class="rowTab">
-                <div class="labels">
-                    <label for="dropdown2" id="Preference">What do you like most in FCC:</label>
-                </div>
-
-                <div class="rightTab">
-                    <select id="dropdown2" name="dropdown2" class="dropdown">
-                        <option value="">Select an option</option>
-                        <option value="Projects">Projects</option>
-                        <option value="Challenges">Challenges</option>
-                        <option value="Community">Community</option>
-                        <option value="Open-source">Open source</option>
-                    </select>
-                </div>
+            <div class="rightTab">
+              <input type="number" id="number" name="Age" class="input-field" placeholder="Enter your age" required min="1" max="120">
             </div>
-
-            <div class="rowTab">
-                <div class="labels">
-                    <label for="preferences">Things that should be improved in the future
-                        <br>(Check all that apply):</label>
-                </div>
-                <div class="rightTab">
-                    <ul style="list-style: none">
-                        <li class="checkbox">
-                            <label>
-                                <input type="checkbox" id="checkbox" value="Front-end Projects" name="prefer" class="radiobox">Front-end Projects
-                            </label>
-                        </li>
-                        <li class="checkbox">
-                            <label>
-                                <input type="checkbox" id="checkbox" value="Back-end Projects" name="prefer" class="radiobox">Back-end Projects
-                            </label>
-                        </li>
-                        <li class="checkbox">
-                            <label>
-                                <input type="checkbox" id="checkbox" value="Data-Visualization" name="prefer" class="radiobox">Data Visualization
-                            </label>
-                        </li>
-                        <li class="checkbox">
-                            <label>
-                                <input type="checkbox" id="checkbox" value="Videos" name="prefer" class="radiobox">Videos
-                            </label>
-                        </li>
-                    </ul>
-                </div>
+          </div>
+      
+          <div class="rowTab">
+            <div class="labels">
+              <label for="role">Which option best describes your current status?</label>
             </div>
-
-            <div class="rowTab">
-                <div class="labels">
-                    <label for="text-area" id="comments">Any suggestions or comments:</label>
-                </div>
-                <div class="rightTab">
-                    <textarea id="text-area" class="input-field" style="height:50px;resize:vertical" maxlength="300" placeholder="Write your comments here..." row="3" cols="35"></textarea>
-                </div>
+      
+            <div class="rightTab">
+              <select id="dropdown" class="dropdown" name="role">
+                 <option value="">Select an option</option>
+                 <option value="notStarted">Not started</option>
+                 <option value="codeNewbie">Code Newbie</option>
+                 <option value="halfWay"> Half way there</option>
+                 <option value="Prpfessional">Professional</option>
+                 <option value="other">Other</option>
+              </select>
             </div>
-            <!--Submit button-->
-            <div style="text-align:center;">
+          </div>
+      
+          <div class="rowTab">
+            <div class="labels">
+              <label for="radiobox" id="radio-buttons">How long do you practice coding on average?</label>
+            </div>
+            <div class="rightTab">
+              <ul style="list-style: none;">
+                <li class="radio">
+                  <label>Daily
+                    <input name="radio-buttons" type="radio" value="1" class="radiobox">
+                  </label>
+                </li>
+                <li class="radio">
+                  <label>Weekly
+                    <input name="radio-buttons" type="radio" value="2" class="radiobox">
+                  </label>
+                </li>
+                <li class="radio">
+                  <label>Monthly
+                    <input name="radio-buttons" type="radio" value="3" class="radiobox">
+                  </label>
+                </li>
+              </ul>
+            </div>
+          </div>
+      
+          <div class="rowTab">
+            <div class="labels">
+              <label for="dropdown2" id="Preference">What is your aim after learning programming:</label>
+            </div>
+      
+            <div class="rightTab">
+              <select id="dropdown2" name="dropdown2" class="dropdown">
+                 <option value="">Select an option</option>
+                 <option value="Business">Start a business</option>
+                 <option value="Freelance">Freelancing</option>
+                 <option value="Fulltime">Full-time job</option>
+                 <option value="Hobby">As a hobby</option>
+              </select>
+            </div>
+          </div>
+      
+          <div class="rowTab">
+            <div class="labels">
+              <label for="preferences">What do you like most in Programming:
+              <br>(Check all that apply):</label>
+            </div>
+            <div class="rightTab">
+              <ul style="list-style: none">
+                <li class="checkbox">
+                  <label>
+                     <input type="checkbox" id="checkbox" value="Front-end Projects" name="prefer" class="radiobox">Independence
+                  </label>
+                </li>
+                <li class="checkbox">
+                  <label>
+                     <input type="checkbox" id="checkbox" value="Back-end Projects" name="prefer" class="radiobox">Problem solving
+                  </label>
+                </li>
+                <li class="checkbox">
+                  <label>
+                     <input type="checkbox" id="checkbox" value="Data-Visualization" name="prefer" class="radiobox">Good money
+                  </label>
+                </li>
+                <li class="checkbox">
+                  <label>
+                     <input type="checkbox" id="checkbox" value="Videos" name="prefer" class="radiobox">Secure future
+                  </label>
+                </li>
+              </ul>
+            </div>
+          </div>
+      
+          <div class="rowTab">
+            <div class="labels">
+              <label for="text-area" id="comments">Add more info regarding why you want to be a coder:</label>
+            </div>
+            <div class="rightTab">
+              <textarea id="text-area" class="input-field" style="height:60px;resize:vertical" maxlength="300" placeholder="Write your comments here..." rows="3" cols="35"></textarea>
+            </div>
+          </div>
+          <!--Submit button-->
+          <div style="text-align:center;">
             <button id="submit">Submit</button>
-            </div>
+          </div>
         </form>
-        </section>
-</body>
-
-</html>
+      </section>
+      </body>
+      
+      </html>
